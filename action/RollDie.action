@@ -1,0 +1,5 @@
+int16 num_rolls
+---
+int16[] all_outcomes
+---
+int16 last_outcome
