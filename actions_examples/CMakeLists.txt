@@ -15,7 +15,6 @@ add_action_files(
 
 if (CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
-  add_rostest(test/test_example_action_client.test)
   add_rostest(test/test_example_action_server.test)
 endif()
 
