@@ -13,21 +13,23 @@ add_action_files(
   RollDie.action
 )
 
+if (CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest(test/test_example_action_client.test)
+  add_rostest(test/test_example_action_server.test)
+endif()
+
 generate_messages(
   DEPENDENCIES
   actionlib_msgs
   std_msgs
 )
 
-catkin_package()
+catkin_package(CATKIN_DEPENDS
+  actionlib_msgs
+  message_runtime
+)
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-
-install(DIRECTORY scripts src
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="actions_examples" type="example_action_client.py" name="example_client" output="screen"/>
+</launch>

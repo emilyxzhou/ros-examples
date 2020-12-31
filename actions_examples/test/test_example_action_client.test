@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="actions_examples" type="test_example_action_client.py" name="example_client" output="screen"/>
+    <test test-name="test_example_action_client" pkg="actions_examples" type="test_example_action_client.py"/>
+</launch>
